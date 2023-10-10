@@ -4,6 +4,15 @@ Lizbeth Castaneda
 
 10-09-2023 Installed Visual Studio Community 2019 in a new computer.
 10-09-2023 Created the solution with tutorial following step#1, the solution was creted with the name MvcPlate.
+10-10-2023 
+10-10-2023
+10-10-2023
+10-10-2023
+10-10-2023
+
+
+publish
+azure
 
 
 
