@@ -20,9 +20,16 @@ namespace MvcPlate.Controllers
         }
 
         // GET: Plates
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Plate.ToListAsync());
+            var plates = from m in _context.Plate
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                plates = plates.Where(s => s.Name.Contains(searchString));
+            }
+            return View(await plates.ToListAsync());
         }
 
         // GET: Plates/Details/5
