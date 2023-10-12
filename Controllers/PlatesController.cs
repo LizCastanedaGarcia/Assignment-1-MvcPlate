@@ -19,7 +19,8 @@ namespace MvcPlate.Controllers
             _context = context;
         }
 
-        // GET: Movies
+        // GET: Plates
+        
         public async Task<IActionResult> Index(string plateColor, string searchString)
         {
             // Use LINQ to get list of genres.
@@ -42,7 +43,7 @@ namespace MvcPlate.Controllers
 
             var plateColorVM = new PlateColorViewModel
             {
-                Color = new SelectList(await genreQuery.Distinct().ToListAsync()),
+                Colors = new SelectList(await genreQuery.Distinct().ToListAsync()),
                 Plates = await plates.ToListAsync()
             };
 
@@ -50,17 +51,17 @@ namespace MvcPlate.Controllers
         }
 
         // GET: Plates
-        //public async Task<IActionResult> Index(string searchString)
-        //{
-        //    var plates = from m in _context.Plate
-        //                 select m;
-        //
-        //    if (!String.IsNullOrEmpty(searchString))
-        //    {
-        //        plates = plates.Where(s => s.Name.Contains(searchString));
-        //    }
-        //   return View(await plates.ToListAsync());
-        //}
+        // public async Task<IActionResult> Index(string searchString)
+        // {
+        //     var plates = from m in _context.Plate
+        //                  select m;
+
+        //     if (!String.IsNullOrEmpty(searchString))
+        //     {
+        //         plates = plates.Where(s => s.Name.Contains(searchString));
+        //     }
+        //    return View(await plates.ToListAsync());
+        // }
 
         // GET: Plates/Details/5
         public async Task<IActionResult> Details(int? id)
