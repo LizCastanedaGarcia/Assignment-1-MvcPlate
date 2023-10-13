@@ -97,5 +97,7 @@ Lizbeth Castaneda
 
 10-13-2023 12:55pm Improve Home Page with CSS
 
-13-03-2023 12:55pm Finally I finish and submit Assignment 
+10-13-2023 12:58pm I finish CSS format
+
+13-03-2023 13:45pm Finally I finish and submit Assignment 
 
