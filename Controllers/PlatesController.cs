@@ -20,7 +20,7 @@ namespace MvcPlate.Controllers
         }
         //****************************************************
         // GET: Movies
-        public async Task<IActionResult> Index(string plateColor, string searchString)
+       /* public async Task<IActionResult> Index(string plateColor, string searchString)
         {
             // Use LINQ to get list of genres.
             IQueryable<string> genreQuery = from m in _context.Plate
@@ -37,7 +37,7 @@ namespace MvcPlate.Controllers
 
             if (!string.IsNullOrEmpty(plateColor))
             {
-                plates = plates.Where(x => x.Color == platesColor);
+                plates = plates.Where(x => x.Color == plateColor);
             }
 
             var plateColorVM = new PlateColorViewModel
@@ -47,7 +47,7 @@ namespace MvcPlate.Controllers
             };
 
             return View(plateColorVM);
-        }
+        }*/
         //****************************************************************
 
         // GET: Plates

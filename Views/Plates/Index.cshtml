@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<MvcPlate.Models.Plate>
+@*@model MvcPlate.Models.PlateColorViewModel*@
 
 @{
     ViewData["Title"] = "Index";
@@ -11,13 +12,16 @@
 </p>
 
 <form asp-controller="Plates" asp-action="Index" method="get">
-    <p>
-        Name: <input type="text" name="SearchString" />
-        <input type="submit" value="Filter" />
 
+    <p>
         @*<select asp-for="PlateColor" asp-items="Model.Colors">
             <option value="">All</option>
         </select>*@
+
+        Name: <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" />
+
+
     </p>
 </form>
 
@@ -61,7 +65,9 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model)
+       @*@foreach (var item in Model.Plates)*@
+        {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -93,6 +99,6 @@
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>
