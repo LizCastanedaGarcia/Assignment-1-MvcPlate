@@ -21,47 +21,47 @@ namespace MvcPlate.Controllers
 
         // GET: Plates
         
-        public async Task<IActionResult> Index(string plateColor, string searchString)
-        {
+        //public async Task<IActionResult> Index(string plateColor, string searchString)
+        //{
             // Use LINQ to get list of genres.
-            IQueryable<string> genreQuery = from m in _context.Plate
-                                            orderby m.Color
-                                            select m.Color;
+        //    IQueryable<string> genreQuery = from m in _context.Plate
+        //                                    orderby m.Color
+        //                                    select m.Color;
 
-            var plates = from m in _context.Plate
-                         select m;
+         //   var plates = from m in _context.Plate
+           //              select m;
 
-            if (!string.IsNullOrEmpty(searchString))
-            {
-                plates = plates.Where(s => s.Name.Contains(searchString));
-            }
+           // if (!string.IsNullOrEmpty(searchString))
+           // {
+           //     plates = plates.Where(s => s.Name.Contains(searchString));
+           // }
 
-            if (!string.IsNullOrEmpty(plateColor))
-            {
-                plates = plates.Where(x => x.Color == plateColor);
-            }
+           // if (!string.IsNullOrEmpty(plateColor))
+           // {
+           //     plates = plates.Where(x => x.Color == plateColor);
+           // }
 
-            var plateColorVM = new PlateColorViewModel
-            {
-                Colors = new SelectList(await genreQuery.Distinct().ToListAsync()),
-                Plates = await plates.ToListAsync()
-            };
+           // var plateColorVM = new PlateColorViewModel
+           // {
+             //   Colors = new SelectList(await genreQuery.Distinct().ToListAsync()),
+             //   Plates = await plates.ToListAsync()
+            //};
 
-            return View(plateColorVM);
-        }
+            //return View(plateColorVM);
+       // }
 
         // GET: Plates
-        // public async Task<IActionResult> Index(string searchString)
-        // {
-        //     var plates = from m in _context.Plate
-        //                  select m;
+         public async Task<IActionResult> Index(string searchString)
+         {
+             var plates = from m in _context.Plate
+                          select m;
 
-        //     if (!String.IsNullOrEmpty(searchString))
-        //     {
-        //         plates = plates.Where(s => s.Name.Contains(searchString));
-        //     }
-        //    return View(await plates.ToListAsync());
-        // }
+             if (!String.IsNullOrEmpty(searchString))
+             {
+                 plates = plates.Where(s => s.Name.Contains(searchString));
+             }
+            return View(await plates.ToListAsync());
+         }
 
         // GET: Plates/Details/5
         public async Task<IActionResult> Details(int? id)

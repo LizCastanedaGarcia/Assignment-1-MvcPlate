@@ -14,6 +14,10 @@
     <p>
         Name: <input type="text" name="SearchString" />
         <input type="submit" value="Filter" />
+
+        @*<select asp-for="PlateColor" asp-items="Model.Colors">
+            <option value="">All</option>
+        </select>*@
     </p>
 </form>
 
@@ -23,27 +27,35 @@
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
+                @*@Html.DisplayNameFor(model => model.Plates[0].Name)*@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.StockDate)
+                @*@Html.DisplayNameFor(model => model.Plates[0].StockDate)*@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Description)
+                @*@Html.DisplayNameFor(model => model.Plates[0].Description)*@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Origen)
+                @*@Html.DisplayNameFor(model => model.Plates[0].Origen)*@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Color)
+                @*@Html.DisplayNameFor(model => model.Plates[0].Color)*@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Size)
+                @*@Html.DisplayNameFor(model => model.Plates[0].Size)*@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price)
+                @*@Html.DisplayNameFor(model => model.Plates[0].Price)*@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Rating)
+                @*@Html.DisplayNameFor(model => model.Plates[0].Rating)*@
             </th>
             <th></th>
         </tr>
