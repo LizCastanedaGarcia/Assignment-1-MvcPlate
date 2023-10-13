@@ -91,5 +91,9 @@ Lizbeth Castaneda
 
 10-13-2023 11:33am I'm trying to fix second searching
 
+10-13-2023 12:01pm Improve CSS
+
+10-13-2023 12:21pm Create About us page with img, mision and vision
+
 13-03-2023 12:55pm Finally I finish and submit Assignment 
 
