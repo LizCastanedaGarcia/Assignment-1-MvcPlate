@@ -14,6 +14,7 @@ namespace MvcPlate.Models
 
         [Required]
         [Display(Name = "Name")]
+        [StringLength(160, MinimumLength = 15)]
         public string Name { get; set; }
 
         [Required]
